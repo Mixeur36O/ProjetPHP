@@ -5,8 +5,8 @@ function  selectAllMods($pdo){
         $query = 'select * from mods';
         $selectMod = $pdo->prepare($query);
         $selectMod->execute();
-        $mods = $selectMod->fetchAll();
-        return $mods;
+        $mod = $selectMod->fetchAll();
+        return $mod;
     } catch (PDOException $e) {
         $message = $e->getMessage();
         die($message);

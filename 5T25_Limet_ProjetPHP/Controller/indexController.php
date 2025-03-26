@@ -1,4 +1,7 @@
 <?php
+
+    require_once("Models\modModel.php");
+
     $uri = $_SERVER["REQUEST_URI"];
 
     if ($uri === "/index.php" || $uri === "/") {
