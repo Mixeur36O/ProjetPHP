@@ -1,3 +1,63 @@
+
+
 .img{
     width: 50px;
 }
+
+header{
+    background-color: rgb(87, 197, 73);
+    margin-bottom: none;
+}
+
+ul li a{
+    color: rgb(199, 197, 197);
+    font-weight: 900;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+ul li{
+    list-style-type: none;
+    background-color: rgba(211, 74, 32, 0.644);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20%;
+}
+
+header ul{
+    margin: none;
+}
+
+h1{
+    background-color: rgba(163, 57, 25, 0.863);
+    margin-top: none;
+}
+
+h2{
+    text-align: center;
+}
+
+.blocM{
+    border: solid black 5px;
+    padding: 20px;
+    
+}
+
+
+main{
+    background-color: #d7690e;
+}
+
+.IMG{
+    width: 450px;
+}
+
+footer{
+    background-color:#d7690e ;
+}
+
+.IMGF{
+    width: 35px;
+    padding: 10px;
+}
+
+

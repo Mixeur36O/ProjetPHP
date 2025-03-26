@@ -10,10 +10,10 @@
 </head>
 <body>
     <header>
-        <?php require_once("/Views/Components/navBar.php"); ?>
+        <?php require_once("Views/Components/navBar.php"); ?>
     </header>
     <main>
-        <? require_once($baladeur) ; ?>
+        <?php require_once($template); ?>
     </main>
     <footer>
         <?php require_once("Views/Components/footer.php"); ?>

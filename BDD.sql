@@ -1,8 +1,3 @@
-Drop table prescription;
-Drop table medicament;
-Drop table patient;
-Drop table consultation;
-Drop table medecin;
 Drop table type;
 Drop table mods;
 Drop table typeJeu;
@@ -34,6 +29,7 @@ modTaille float,
 modPhoto varchar(1000),
 modDate date,
 modFavoris bool,
+modVersion float,
 typeID int,
 utiID int,
 primary key (modID),
@@ -73,9 +69,8 @@ values
 ('Console', 'Minecraft Bedrock'),
 ('PC', 'Minecraft Java');
 
-insert into mods (modNom, modTaille, modPhoto, modDate, modFavoris, typeID, utiID)
-values ('RLCraft', 48.9 , 'https://bisecthosting.com/images/CF/RLCraft/BH_RL_Header.webp', '2023-06-28',false, 1, 1);
+insert into mods (modNom, modTaille, modPhoto, modDate, modFavoris,modVersion, typeID, utiID)
+values ('RLCraft', 48.9 , 'https://bisecthosting.com/images/CF/RLCraft/BH_RL_Header.webp', '2023-06-28',false,1.12, 1, 1);
 
 insert into typejeu (jeuID, modID)
 values (2,1);
-
