@@ -1,13 +1,21 @@
-
+body{
+    background-image: url(https://www.fractalcamo.com/uploads/5/9/0/2/5902948/s189772745713394276_p3862_i149_w750.jpeg);
+}
 
 .img{
     width: 50px;
 }
 
-header{
-    background-color: rgb(87, 197, 73);
-    margin-bottom: none;
+.inscri{
+    background-image: url(https://t.novaskin.me/26b0b10294cac99ea7e9108be6671958dfd82939771ac819c9b59f6be6d26b61);
+    height: 1000px;
 }
+
+
+fieldset {
+    border: 0;
+}
+
 
 ul li a{
     color: rgb(199, 197, 197);
@@ -17,7 +25,7 @@ ul li a{
 }
 ul li{
     list-style-type: none;
-    background-color: rgba(211, 74, 32, 0.644);
+    background-image: url(https://www.fractalcamo.com/uploads/5/9/0/2/5902948/s189772745713394276_p3862_i149_w750.jpeg);
     padding: 20px;
     margin: 20px;
     border-radius: 20%;
@@ -42,18 +50,10 @@ h2{
     
 }
 
-
-main{
-    background-color: #d7690e;
-}
-
 .IMG{
     width: 450px;
 }
 
-footer{
-    background-color:#d7690e ;
-}
 
 .IMGF{
     width: 35px;
