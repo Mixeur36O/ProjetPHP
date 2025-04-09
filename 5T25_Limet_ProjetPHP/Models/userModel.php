@@ -41,14 +41,16 @@
     }
     function updateUser($pdo){
         try{
-            $query = 'update utilisateur set utiNom = :utiNom, utiPrenom = :utiPrenom, utiMotDePasse = :utiMotDePasse, utiEmail = :utiEmail where id = :id';
+            $query = 'update utilisateur set utiNom = :utiNom, utiPrenom = :utiPrenom, utiPseudo = :utiPseudo, utiMotDePasse = :utiMotDePasse, utiEmail = :utiEmail, utiRole = :utiRole where utiID = :utiID';
             $ajouteUser = $pdo->prepare($query);
             $ajouteUser->execute([
                 'utiNom' => $_POST["nom"],
                 'utiPrenom' => $_POST["prenom"],
+                'utiPseudo' =>$_POST["login"],
                 'utiMotDePasse' => $_POST["mot_de_passe"],
                 'utiEmail' => $_POST["email"],
-                'id' => $_SESSION["user"]->id
+                'utiRole' => 'admin',
+                'utiID' => $_SESSION["user"]->utiID
             ]);
         } catch (PDOEXCEPTION $e) {
             $message = $e->getMessage();
@@ -58,10 +60,10 @@
     
     function updateSession($pdo){
         try{
-            $query = 'select * from utilisateur where id = :id';
+            $query = 'select * from utilisateur where utiID = :utiID';
             $selectUser = $pdo->prepare($query);
-            $selectUser->exceute([
-                'id' => $_SESSION["user"]->id
+            $selectUser->execute([
+                'utiID' => $_SESSION["user"]->utiID
             ]);
             $user = $selectUser->fetch();
             $_SESSION["user"] = $user;
