@@ -49,7 +49,7 @@
                 'utiPseudo' =>$_POST["login"],
                 'utiMotDePasse' => $_POST["mot_de_passe"],
                 'utiEmail' => $_POST["email"],
-                'utiRole' => 'admin',
+                'utiRole' => 'user',
                 'utiID' => $_SESSION["user"]->utiID
             ]);
         } catch (PDOEXCEPTION $e) {

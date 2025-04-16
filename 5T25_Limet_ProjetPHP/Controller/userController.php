@@ -24,6 +24,7 @@ if ($uri === "/connexion") {
     if (isset($_POST['btnEnvoi'])) {
         $messageError = verifEmptyData();
         if (!$messageError) {
+            var_dump("LS");
             createUser($pdo);
             header('location:/connexion');
         }
@@ -44,3 +45,9 @@ if ($uri === "/connexion") {
     $template = "Views/Users/inscription.php";
     require_once("Views/base.php");
 }
+  elseif ($uri === "/deleteProfil") {
+    deleteModFromUser($pdo);
+    deleteALLModFromUser($pdo);
+    deleteUser($pdo);
+    header("location:/deconnexion");
+  }

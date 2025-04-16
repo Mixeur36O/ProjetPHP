@@ -12,3 +12,9 @@ function  selectAllMods($pdo){
         die($message);
     }
 }
+
+function deleteModFromUser($pdo){
+    try{
+        $query = 'delete from option_ecole where'
+    }
+}
