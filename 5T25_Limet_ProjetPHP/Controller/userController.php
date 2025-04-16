@@ -41,13 +41,14 @@ if ($uri === "/connexion") {
             header('location:/');
         }
     }
+    elseif (isset($_POST['btnSupp'])) {
+        deleteModFromUser($pdo);
+        deleteALLModFromUser($pdo);
+        deleteUser($pdo);
+        header("location:/");
+      }
     $title = "Mise à jour du profil";
     $template = "Views/Users/inscription.php";
     require_once("Views/base.php");
 }
-  elseif ($uri === "/deleteProfil") {
-    deleteModFromUser($pdo);
-    deleteALLModFromUser($pdo);
-    deleteUser($pdo);
-    header("location:/deconnexion");
-  }
+

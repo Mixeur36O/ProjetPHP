@@ -72,3 +72,16 @@
             die($message);
         }
     }
+
+    function DeleteUser($pdo){
+        try {
+            $query = 'delete from utilisateur where utiID = :utiID';
+            $delUser = $pdo->prepare($query);
+            $delUser->execute([
+                'utiID' => $_SESSION["user"]->utiID
+            ]);
+        } catch (PDOException $e) {
+            $message = $e->getMessage();
+            die($message);
+        }
+    }

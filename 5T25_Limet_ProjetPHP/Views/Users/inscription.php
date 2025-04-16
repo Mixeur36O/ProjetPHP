@@ -26,6 +26,9 @@
                 <div>
                     <button name="btnEnvoi" class="btn btn-primary" value="btnEnvoi"><?php if (isset($_SESSION['user'])) : ?>Modifier <?php else : ?> Envoyer <?php endif ?></button>
                 </div>
+                <div>
+                    <button name="btnSupp" class="btn btn-primary" value="btnSupp"><?php if (isset($_SESSION['user'])) : ?>Supprimer<?php endif ?></button>
+                </div>
             </fieldset>
         </form>
     </div>
