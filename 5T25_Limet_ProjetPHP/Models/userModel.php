@@ -76,10 +76,12 @@
     function DeleteUser($pdo){
         try {
             $query = 'delete from utilisateur where utiID = :utiID';
-            $delUser = $pdo->prepare($query);
-            $delUser->execute([
-                'utiID' => $_SESSION["user"]->utiID
+            $selectUser = $pdo->prepare($query);
+            $selectUser->execute([
+                'utiID' => $_SESSION['user']->utiID
             ]);
+            $user = $selectUser->fetch();
+            $_SESSION["user"] = $user;
         } catch (PDOException $e) {
             $message = $e->getMessage();
             die($message);

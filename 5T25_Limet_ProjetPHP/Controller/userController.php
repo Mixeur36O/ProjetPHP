@@ -45,7 +45,7 @@ if ($uri === "/connexion") {
         deleteModFromUser($pdo);
         deleteALLModFromUser($pdo);
         deleteUser($pdo);
-        header("location:/");
+        header("location:/deconnexion");
       }
     $title = "Mise à jour du profil";
     $template = "Views/Users/inscription.php";
