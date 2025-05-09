@@ -89,4 +89,37 @@ function createMod($pdo){
     }
 }
 
-function ajoute
+// function ajoutTypeMod($pdo, $typeID){
+    //try {
+        //$query = 'insert into mods (typeID) values (:typeID)';
+        //$deleteAllModFromId = $pdo->prepare($query);
+        //$deleteAllModFromId->execute([
+            //'typeID' => $typeID
+        //]);
+    //} catch (\PDOException $e) {
+        //$message = $e->getMessage();
+        //die($message);
+    //}
+//}
+
+//function selectOneMod($pdo){
+    //try {
+        //$query = 'select * from mods where modID = :modID';
+        //$selectMod = $pdo->prepare($query);
+        //$selectMod->execute([
+            //'modID' => $_GET["modID"]
+        //]);
+        //$mod = $selectMod->fetch();
+        //return $mod;
+    //}  //catch (PDOException $e) {
+        //$message = $e->getMessage();
+        //die($message);
+    //}    
+//}
+
+//function selectTypeActiveMod($pdo){
+    //try{
+        //$query = 'select * from'
+    //}
+//}
+

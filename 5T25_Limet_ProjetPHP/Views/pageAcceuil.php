@@ -21,7 +21,7 @@
                 </div>
                 <div class="center">
                     <p><span>Date de parution<?=$newMod->modDate ?> - </span> <span><?=$newMod->modVersion ?></span></p>
-                    <a href="voirMod.php" class="btn btn-page">Voir le mod plus en détail</a>
+                    <a href="voirEcole.php?schoolId=<?=$newMod->modID ?>" class="btn btn-page">Voir le mod plus en détail</a>
                     <?php if ($uri ==="/mesMods") : ?>
                         <p><a href="deleteMod?modID=<?= $newMod->modID ?>">Supprimer le mod</a></p>
                         <p><a href="updateEcole?modID=<?= $newMod->modID ?>">Modifier le mod</a></p>
