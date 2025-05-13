@@ -25,4 +25,13 @@
         //$title = "Ajout d'un mod";
         //$template = "Views/Schools/modsCree.php";
         //require_once("Views/base.php");
+
+        //elseif(isset($_GET["modID"]) && $uri === "/voirMod?modID=" . $_GET["modID"]){
+            //$mod = selectOneMod($pdo);
+            //$options = selectTypeMod($pdo);
+            //$title ="Ajout d'un Mod";
+            //$template ="Views/Mods/voirMod.php";
+            //require_once("Views/base.php");
+        //}
     //}
+

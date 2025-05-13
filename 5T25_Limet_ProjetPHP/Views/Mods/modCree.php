@@ -25,8 +25,9 @@
                     <input type="version" placeholder="version" class="form-control" id="version" name="version" <?php if (isset($_SESSION['user'])) : ?> value="<?=$_SESSION['user']->modVersion ?>" <?php endif ?> required>
                 </div>
                 <select name="type[]" id="type-select" multiple>
-                    <?php foreach ($types) ?>
-
+                    <?php foreach ($types as $type)  : ?>
+                        <option value="<?= $type->typeID ?>"><?= $type->nom ?></option>
+                    <?php endforeach ?>    
                 </select>
                 <?php if (isset($_SESSION["user"])) : ?>
                     <div>
