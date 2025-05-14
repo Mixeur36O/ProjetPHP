@@ -89,39 +89,94 @@ function createMod($pdo){
     }
 }
 
-// function ajoutTypeMod($pdo, $typeID){
-    //try {
-        //$query = 'insert into mods (typeID) values (:typeID)';
-        //$deleteAllModFromId = $pdo->prepare($query);
-        //$deleteAllModFromId->execute([
-            //'typeID' => $typeID
-        //]);
-    //} catch (\PDOException $e) {
-        //$message = $e->getMessage();
-        //die($message);
-    //}
-//}
+function ajoutTypeMod($pdo, $typeID){
+    try {
+        $query = 'insert into mods (typeID) values (:typeID)';
+        $deleteAllModFromId = $pdo->prepare($query);
+        $deleteAllModFromId->execute([
+            'typeID' => $typeID
+        ]);
+    } catch (\PDOException $e) {
+        $message = $e->getMessage();
+        die($message);
+    }
+}
 
-//function selectOneMod($pdo){
-    //try {
-        //$query = 'select * from mods where modID = :modID';
-        //$selectMod = $pdo->prepare($query);
-        //$selectMod->execute([
-            //'modID' => $_GET["modID"]
-        //]);
-        //$mod = $selectMod->fetch();
-        //return $mod;
-    //}  //catch (PDOException $e) {
-        //$message = $e->getMessage();
-        //die($message);
-    //}    
-//}
+function selectOneMod($pdo){
+    try {
+        $query = 'select * from mods where modID = :modID';
+        $selectMod = $pdo->prepare($query);
+        $selectMod->execute([
+            'modID' => $_GET["modID"]
+        ]);
+        $mod = $selectMod->fetch();
+        return $mod;
+    }  catch (PDOException $e) {
+        $message = $e->getMessage();
+        die($message);
+    }    
+}
 
-//function selectTypeActiveMod($pdo){
-    //try{
-        //$query = 'select * from'
-    //}
-//}
+function selectTypeActiveMod($pdo){
+    try{
+        $query = "select * from type where typeID in (select typeID from mods where modID = :modID);";
+        $selectType = $pdo->prepare($query);
+        $selectType->execute([
+            'modID' => $_GET["modID"]
+        ]);
+        $types = $selectType->fetchAll();
+        return $types;
+    } catch (PDOException $e) {
+        $message = $e->getMessage();
+        die($message);
+    }
+}
 
+function updateMod($dbh){
+    try{
+        $query = 'update mods set modNom = :modNom, modTaille = :modTaille, modPhoto = :modPhoto, 
+        modDate = :modDate, modFavoris = :modFavoris, modVersion = :modVersion, typeID = :typeID, utiID = :utiID';
+        $updateModFromID = $dbh->prepare($query);
+        $updateModFromID->execute([
+            'modNom' => $_POST["nom"],
+            'modTaille' => $_POST["taille"],
+            'modPhoto' => $_POST["photo"],
+            'modDate' => $_POST["Date"],
+            'modFavoris' => "",
+            'modVersion' => $_POST["version"],
+            'typeID' => $_POST["typeID"],
+            'utiID' => $_POST["utiID"]
+        ]);
+    } catch (PDOException $e){
+        $message = $e->getMessage();
+        die($message);
+    }
+}
+
+function deleteTypeMod($dbh){
+    try{
+        $query = 'delete from mods where typeID = typeID';
+        $deleteAllModFromId = $dbh->prepare($query);
+        $deleteAllModFromId->execute([
+            'typeID' => $_GET["typeID"]
+        ]);
+    } catch (PDOException $e) {
+        $message = $e->getMessage();
+        die($message);
+    }
+}
+
+function deleteOneMod($pdo){
+    try{
+        $query = 'delete from mods where modID = :modID';
+        $deleteAllModsFromId = $pdo->prepare($query);
+        $deleteAllModsFromId->execute([
+            'modID' => $_GET["modID"]
+        ]);
+    } catch (PDOException $e){
+        $message = $e->getMessage();
+        die($message);
+    }
+}
 
 

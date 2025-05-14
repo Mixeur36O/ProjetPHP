@@ -2,8 +2,10 @@ body{
     background-image: url(https://www.fractalcamo.com/uploads/5/9/0/2/5902948/s189772745713394276_p3862_i149_w750.jpeg);
 }
 
-.img{
-    width: 50px;
+.IMG{
+    border-radius: 1%;
+    width : 20vw;
+    height : 20vh;
 }
 
 .inscri{
@@ -49,11 +51,6 @@ h2{
     padding: 20px;
     
 }
-
-.IMG{
-    width: 450px;
-}
-
 
 .IMGF{
     width: 35px;
