@@ -18,11 +18,11 @@
                     <img class="IMG flexible" src="<?= $newMod->modPhoto ?>" alt="photo du mod">
                 </div>
                 <div class="center">
-                    <p><span>Date de parution<?=$newMod->modDate ?> - </span> <span><?=$newMod->modVersion ?></span></p>
-                    <a href="voirMod.php?modID=<?=$mod->modID ?>" class="btn btn-page">Voir le mod</a>
+                    <p><span>Date de parution <?=$newMod->modDate ?> - </span> <span><?=$newMod->modVersion ?></span></p>
+                    <a href="voirMod.php?modID=<?=$newMod->modID ?>" class="btn btn-page">Voir le mod</a>
                     <?php if ($uri ==="/mesMods") : ?>
-                        <p><a href="deleteMod?modID=<?= $mod->modID ?>" class="petitsLiens lienModif">Supprimer le mod</a></p>
-                        <p><a href="deleteMod?modID=<?= $mod->modID ?>" class="petitsLiens lienModif">Modifier le mod</a></p>
+                        <p><a href="deleteMod?modID=<?= $newMod->modID ?>" class="petitsLiens lienModif">Supprimer le mod</a></p>
+                        <p><a href="deleteMod?modID=<?= $newMod->modID ?>" class="petitsLiens lienModif">Modifier le mod</a></p>
                     <?php endif ?>
                 </div>
             </div>

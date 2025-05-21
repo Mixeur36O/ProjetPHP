@@ -70,18 +70,16 @@ function selectAllTypes($pdo){
 function createMod($pdo){
     
     try {
-        $query = 'insert into mods (modNom, modTaille, modPhoto, modDate, modFavoris, modVersion, typeID, utiID)
-        values (:modNom, :modTaille, modPhoto, modDate, modFavoris, modVersion, :typeID, :utiID)';
+        $query = 'insert into mods (modNom, modTaille, modPhoto, modDate, modVersion, utiID)
+        values (:modNom, :modTaille, :modPhoto, :modDate, :modVersion, :utiID)';
         $addMod = $pdo->prepare($query);
         $addMod->execute([
             'modNom' => $_POST["nom"],
             'modTaille' => $_POST["taille"],
             'modPhoto' => $_POST["photo"],
             'modDate' => $_POST["Date"],
-            'modFavoris' => "",
             'modVersion' => $_POST["version"],
-            'typeID' => $_POST["type"]->typeID,
-            'utiID' => $_POST["uti"]->utiID
+            'utiID' => $_SESSION["user"]->utiID
         ]);
     } catch (PDOException $e) {
         $message = $e->getMessage();
@@ -89,14 +87,15 @@ function createMod($pdo){
     }
 }
 
-function ajoutTypeMod($pdo, $typeID){
+function ajoutTypeMod($pdo,$modID,$typeID){
     try {
-        $query = 'insert into mods (typeID) values (:typeID)';
+        $query = 'insert into typemods (typeID, modID) values (:typeID, :modID)';
         $deleteAllModFromId = $pdo->prepare($query);
         $deleteAllModFromId->execute([
-            'typeID' => $typeID
+            'typeID' => $typeID,
+            'modID' => $modID
         ]);
-    } catch (\PDOException $e) {
+    } catch (PDOException $e) {
         $message = $e->getMessage();
         die($message);
     }
@@ -119,10 +118,10 @@ function selectOneMod($pdo){
 
 function selectTypeActiveMod($pdo){
     try{
-        $query = "select * from type where typeID in (select typeID from mods where modID = :modID);";
+        $query = "select * from type where typeID in (select typeID from typemods where typeID = :typeID);";
         $selectType = $pdo->prepare($query);
         $selectType->execute([
-            'modID' => $_GET["modID"]
+            'typeID' => $_GET["typeID"]
         ]);
         $types = $selectType->fetchAll();
         return $types;
@@ -135,16 +134,14 @@ function selectTypeActiveMod($pdo){
 function updateMod($dbh){
     try{
         $query = 'update mods set modNom = :modNom, modTaille = :modTaille, modPhoto = :modPhoto, 
-        modDate = :modDate, modFavoris = :modFavoris, modVersion = :modVersion, typeID = :typeID, utiID = :utiID';
+        modDate = :modDate, modVersion = :modVersion, utiID = :utiID';
         $updateModFromID = $dbh->prepare($query);
         $updateModFromID->execute([
             'modNom' => $_POST["nom"],
             'modTaille' => $_POST["taille"],
             'modPhoto' => $_POST["photo"],
             'modDate' => $_POST["Date"],
-            'modFavoris' => "",
             'modVersion' => $_POST["version"],
-            'typeID' => $_POST["typeID"],
             'utiID' => $_POST["utiID"]
         ]);
     } catch (PDOException $e){
