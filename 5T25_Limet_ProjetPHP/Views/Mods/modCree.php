@@ -1,4 +1,3 @@
-
 <div class="inscri">
     <div class="flex space-evenly wrap">
         <form method="post" action="">
@@ -25,11 +24,9 @@
                     <input type="text" placeholder="version" class="form-control" id="version" name="version" value="<?php if (isset($mod)) : ?><?= $mod->modVersion ?><?php endif ?>">
                 </div>
                 <select name="type[]" id="type" multiple>
-                    <?php foreach ($types as $type)  : ?>
-                        <option value="<?= $type->typeID ?>"
-                            <?php if (isset($typeActiveMod)) : ?><?php foreach ($typeActiveMod as $typeMod) : ?>
-                            <?php if ($type->modID === $typeMod->modID) : ?>selected<?php endif ?>
-                            <?php endforeach ?><?php endif?>><?=$type->typeNom?></option>
+                    <?php foreach ($types as $type) : ?>
+                        <option value="<?= $type->typeID ?>" <?php if (isset($typeActiveMod)) : foreach ($typeActiveMod as $typeMod) : if ($type->modID === $typeMod->modID) : ?>selected<?php endif ?> <?php endforeach ?> <?php endif ?>><?= $type->typeNom ?>
+                        </option>
                     <?php endforeach ?>
                 </select>
                 <div>

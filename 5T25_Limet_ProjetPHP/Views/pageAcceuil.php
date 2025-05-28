@@ -22,7 +22,7 @@
                     <a href="voirMod.php?modID=<?=$newMod->modID ?>" class="btn btn-page">Voir le mod</a>
                     <?php if ($uri ==="/mesMods") : ?>
                         <p><a href="deleteMod?modID=<?= $newMod->modID ?>" class="petitsLiens lienModif">Supprimer le mod</a></p>
-                        <p><a href="deleteMod?modID=<?= $newMod->modID ?>" class="petitsLiens lienModif">Modifier le mod</a></p>
+                        <p><a href="updateMod?modID=<?= $newMod->modID ?>" class="petitsLiens lienModif">Modifier le mod</a></p>
                     <?php endif ?>
                 </div>
             </div>

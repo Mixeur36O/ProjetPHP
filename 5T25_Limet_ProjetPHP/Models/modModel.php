@@ -118,10 +118,10 @@ function selectOneMod($pdo){
 
 function selectTypeActiveMod($pdo){
     try{
-        $query = "select * from type where typeID in (select typeID from typemods where typeID = :typeID);";
+        $query = "select * from type where typeID in (select typeID from typemods where modID = :modID)";
         $selectType = $pdo->prepare($query);
         $selectType->execute([
-            'typeID' => $_GET["typeID"]
+            'modID' => $_GET["modID"]
         ]);
         $types = $selectType->fetchAll();
         return $types;
@@ -134,7 +134,7 @@ function selectTypeActiveMod($pdo){
 function updateMod($dbh){
     try{
         $query = 'update mods set modNom = :modNom, modTaille = :modTaille, modPhoto = :modPhoto, 
-        modDate = :modDate, modVersion = :modVersion, utiID = :utiID';
+        modDate = :modDate, modVersion = :modVersion where modID = :modID';
         $updateModFromID = $dbh->prepare($query);
         $updateModFromID->execute([
             'modNom' => $_POST["nom"],
@@ -142,7 +142,7 @@ function updateMod($dbh){
             'modPhoto' => $_POST["photo"],
             'modDate' => $_POST["Date"],
             'modVersion' => $_POST["version"],
-            'utiID' => $_POST["utiID"]
+            'modID' => $_GET["modID"]
         ]);
     } catch (PDOException $e){
         $message = $e->getMessage();
@@ -152,10 +152,10 @@ function updateMod($dbh){
 
 function deleteTypeMod($dbh){
     try{
-        $query = 'delete from mods where typeID = typeID';
+        $query = 'delete from typemods where modID = :modID';
         $deleteAllModFromId = $dbh->prepare($query);
         $deleteAllModFromId->execute([
-            'typeID' => $_GET["typeID"]
+            'modID' => $_GET["modID"]
         ]);
     } catch (PDOException $e) {
         $message = $e->getMessage();
