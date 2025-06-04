@@ -57,4 +57,17 @@ h2{
     padding: 10px;
 }
 
+.voirMod{
+    color: red;
+    font-weight: 900;
+    text-decoration: none;
+    border: 10px rgb(167, 152, 152) solid;
+    background-color: rgb(167, 152, 152);
+    border-radius: 20%;
+    box-shadow: 10px 5px 5px black;
+}
 
+footer{
+    border-top: solid 1px black;
+    margin-top: 50px;
+}

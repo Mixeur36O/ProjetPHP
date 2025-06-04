@@ -34,7 +34,7 @@
                 $typeID = $_POST["type"][$i];
                 ajoutTypeMod($pdo, $_GET["modID"], $typeID);
             }
-            header("location:/modCree");
+            header("location:/");
         }
         $types = selectAllTypes($pdo);
         $mod = selectOneMod($pdo);
@@ -48,4 +48,3 @@
         deleteOneMod($pdo);
         header("location:/mesMods");
     }
-

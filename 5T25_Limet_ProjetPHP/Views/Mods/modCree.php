@@ -25,7 +25,11 @@
                 </div>
                 <select name="type[]" id="type" multiple>
                     <?php foreach ($types as $type) : ?>
-                        <option value="<?= $type->typeID ?>" <?php if (isset($typeActiveMod)) : foreach ($typeActiveMod as $typeMod) : if ($type->modID === $typeMod->modID) : ?>selected<?php endif ?> <?php endforeach ?> <?php endif ?>><?= $type->typeNom ?>
+                        <option value="<?= $type->typeID ?>" 
+                            <?php if (isset($typeActiveMod)) : ?> <?php foreach ($typeActiveMod as $typeMod) : ?> <?php if ($type->typeID === $typeMod->typeID) : ?>selected<?php endif ?> 
+                            <?php endforeach ?>  
+                            <?php endif ?>>
+                            <?= $type->typeNom ?>
                         </option>
                     <?php endforeach ?>
                 </select>
