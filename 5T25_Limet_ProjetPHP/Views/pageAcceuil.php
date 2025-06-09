@@ -9,11 +9,11 @@
         <a class="voirMod" href="modCree">Créer un mod</a>
     <?php endif ?>
 
-<div class="flexible wrap space-around">
+<div class="flexible flex-warp space-around">
     <?php foreach ($mod as $newMod) : ?>
         <div class="border card">
             <h2 class="center"><?= $newMod->modNom ?></h2>
-            <div>
+            <div class="mod">
                 <div>
                     <img class="IMG flexible" src="<?= $newMod->modPhoto ?>" alt="photo du mod">
                 </div>

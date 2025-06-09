@@ -1,0 +1,9 @@
+.voirMod:hover{
+    border: solid black 10px;
+    background-color: black;
+    color: white;
+}
+ul li:hover{
+    background-image: url(https://www.minecraft.net/content/dam/minecraftnet/archive/648e3e41ec8a0d5b5772157891a9cace-botwdiamond_header.jpg);
+}
+

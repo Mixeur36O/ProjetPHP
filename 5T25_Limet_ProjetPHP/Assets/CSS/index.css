@@ -20,7 +20,7 @@ fieldset {
 
 
 ul li a{
-    color: rgb(199, 197, 197);
+    color: black;
     font-weight: 900;
     text-decoration: none;
     font-size: 1.3em;
@@ -58,7 +58,7 @@ h2{
 }
 
 .voirMod{
-    color: red;
+    color: #de0b0b;
     font-weight: 900;
     text-decoration: none;
     border: 10px rgb(167, 152, 152) solid;
@@ -70,4 +70,17 @@ h2{
 footer{
     border-top: solid 1px black;
     margin-top: 50px;
+    padding: none;
+    background-color: black;
 }
+
+footer p{
+    color: white;
+    text-align: center;
+}
+.mod{
+    border: 5px solid #292b49;
+    padding: 20px;
+    margin: 15px;
+}
+
