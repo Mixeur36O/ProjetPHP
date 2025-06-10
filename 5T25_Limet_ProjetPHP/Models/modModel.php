@@ -15,7 +15,7 @@ function  selectAllMods($pdo){
 
 function deleteModFromUser($dbh){
     try{
-        $query = 'delete from typejeu where modID in (select modID from mods where utiID = :utiID)';
+        $query = 'delete from typemods where modID in (select modID from mods where utiID = :utiID)';
         $deleteAllModFromId = $dbh->prepare($query);
         $deleteAllModFromId->execute([
             'utiID' => $_SESSION["user"]->utiID

@@ -18,19 +18,19 @@
                     <img class="IMG flexible" src="<?= $newMod->modPhoto ?>" alt="photo du mod">
                 </div>
                 <div class="center">
-                    <?php if ($newMod ->modTaille > 100) : ?>
-                        <p>La taille de votre mod est de <?=$newMod->modTaille?> Mo</p>
+                    <?php if ($newMod ->modTaille > 10000) : ?>
+                        <p>La taille de votre mod est de <?=$newMod->modTaille?> To</p>
                     <?php elseif ($newMod ->modTaille > 1000) : ?>
                         <p>La taille de votre mod est de <?=$newMod->modTaille?> Go</p>
-                    <?php elseif ($newMod ->modTaille > 10000) : ?>
-                        <p>La taille de votre mod est de <?=$newMod->modTaille?> To</p>
+                    <?php elseif ($newMod ->modTaille > 100) : ?>
+                        <p>La taille de votre mod est de <?=$newMod->modTaille?> Mo</p>
                     <?php else : ?>
                         <p>La taille de votre mod est de <?=$newMod->modTaille?> Ko</p>
                     <?php endif ?>
                     <p><span>Date de parution <?=$newMod->modDate ?> - </span> <span><?=$newMod->modVersion ?></span></p>
                     <?php if ($uri ==="/mesMods") : ?>
-                        <p><a href="deleteMod?modID=<?= $newMod->modID ?>" class="petitsLiens lienModif">Supprimer le mod</a></p>
-                        <p><a href="updateMod?modID=<?= $newMod->modID ?>" class="petitsLiens lienModif">Modifier le mod</a></p>
+                        <p><a class="voirMod" href="deleteMod?modID=<?= $newMod->modID ?>" class="petitsLiens lienModif">Supprimer le mod</a></p>
+                        <p><a class="voirMod" href="updateMod?modID=<?= $newMod->modID ?>" class="petitsLiens lienModif">Modifier le mod</a></p>
                     <?php endif ?>
                 </div>
             </div>

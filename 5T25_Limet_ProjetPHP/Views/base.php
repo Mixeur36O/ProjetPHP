@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5TI_Limet_Projet</title>
+    <title>Wiki mod Minecraft</title>
     <link rel="stylesheet" href="/Assets/CSS/animation.css">
     <link rel="stylesheet" href="/Assets/CSS/flex.css">
     <link rel="stylesheet" href="/Assets/CSS/index.css">
+    <link rel="icon" type="image/png" href="/Assets/IMG/minecraft_chibi_steve_walking_custom_progress_bar_s_11adb85064.avif" />
 </head>
 <body>
     <header>
